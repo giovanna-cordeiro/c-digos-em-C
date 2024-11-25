@@ -1,0 +1,53 @@
+#include <stdio.h> // Biblioteca padrão para entrada e saída
+#define JOGADORES 4 // Define o número de jogadores como uma constante
+#define PARTIDAS 3 // Define o número de partidas como uma constante
+
+// Declaração de função para ler as pontuações
+void lerPontos(int pontos[JOGADORES][PARTIDAS]); 
+// Declaração de função para encontrar o jogador com maior pontuação total
+int encontrarGanhador(int pontos[JOGADORES][PARTIDAS]);
+
+int main() {
+    int pontos[JOGADORES][PARTIDAS]; // Matriz para armazenar as pontuações dos jogadores em cada partida
+
+    // Lê as pontuações dos jogadores
+    lerPontos(pontos);
+
+    // Encontra o índice do jogador vencedor
+    int ganhador = encontrarGanhador(pontos);
+
+    // Exibe o número do jogador vencedor (índice + 1 para adequar à contagem humana)
+    printf("O jogador %d é o ganhador.\n", ganhador + 1);
+
+    return 0; // Indica que o programa foi executado com sucesso
+}
+
+// Função para ler as pontuações dos jogadores
+void lerPontos(int pontos[JOGADORES][PARTIDAS]) {
+    for (int i = 0; i < JOGADORES; i++) {
+        printf("Insira as pontuações do jogador %d:\n", i + 1);
+        for (int j = 0; j < PARTIDAS; j++) {
+            // Lê a pontuação do jogador `i` na partida `j`
+            scanf("%d", &pontos[i][j]);
+        }
+    }
+}
+
+// Função para encontrar o jogador com maior pontuação total
+int encontrarGanhador(int pontos[JOGADORES][PARTIDAS]) {
+    int total[JOGADORES] = {0}; // Vetor para armazenar as pontuações totais de cada jogador
+    int maior = 0, ganhador = 0; // Variáveis para rastrear a maior pontuação e o índice do ganhador
+
+    // Calcula a pontuação total de cada jogador
+    for (int i = 0; i < JOGADORES; i++) {
+        for (int j = 0; j < PARTIDAS; j++) {
+            total[i] += pontos[i][j]; // Soma a pontuação da partida `j` ao total do jogador `i`
+        }
+        // Verifica se o jogador `i` tem a maior pontuação total até agora
+        if (total[i] > maior) {
+            maior = total[i]; // Atualiza a maior pontuação
+            ganhador = i; // Atualiza o índice do jogador ganhador
+        }
+    }
+    return ganhador; // Retorna o índice do jogador com maior pontuação
+}
