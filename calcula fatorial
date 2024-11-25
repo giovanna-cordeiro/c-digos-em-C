@@ -1,0 +1,17 @@
+#include <stdio.h>
+int fatorial(int n);
+int main() {
+	int n;
+	printf("Digite um número para calcular o fatorial: ");
+	scanf("%d", &n);
+	printf("Fatorial de %d é %d\n", n, fatorial(n));
+	return 0;
+}
+int fatorial(int n) {
+	if (n == 0) {
+		return 1; // O fatorial de 0 é 1
+	} 
+	else {
+		return n * fatorial(n - 1); // Chamada recursiva
+	}
+}
