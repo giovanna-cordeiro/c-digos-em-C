@@ -1,0 +1,24 @@
+#include <stdio.h> 
+
+// Assinatura da função `soma`, que recebe dois inteiros como parâmetros e retorna um inteiro
+int soma(int a, int b);
+
+int main() {
+    int numero1, numero2; // Declaração de variáveis inteiras para armazenar os números fornecidos pelo usuário
+
+    // Solicita ao usuário que insira dois números
+    printf("Digite dois números:\n");
+    // Lê os dois números e os armazena nas variáveis `numero1` e `numero2`
+    scanf("%d %d", &numero1, &numero2);
+    
+    // Chama a função `soma` com os valores de `numero1` e `numero2`, e exibe o resultado
+    printf("Soma = %d", soma(numero1, numero2));
+    
+    return 0; // Indica que o programa foi executado com sucesso
+}
+
+// Implementação da função `soma`
+// A função recebe dois inteiros como parâmetros e retorna a soma desses dois números
+int soma(int a, int b) {
+    return a + b; // Retorna a soma dos dois parâmetros
+}
