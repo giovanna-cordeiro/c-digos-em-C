@@ -1,0 +1,23 @@
+#include <stdio.h> // Biblioteca padrão para entrada e saída
+
+int main() {
+    // Declaração de variáveis de tipos básicos
+    char var1;       // Variável do tipo `char` (1 byte)
+    int var2;        // Variável do tipo `int` (tamanho depende do sistema, geralmente 4 bytes)
+    double var3;     // Variável do tipo `double` (geralmente 8 bytes)
+
+    // Declaração de ponteiros para os mesmos tipos das variáveis acima
+    char *ponteiro1;    // Ponteiro para `char`
+    int *ponteiro2;     // Ponteiro para `int`
+    double *ponteiro3;  // Ponteiro para `double`
+
+    // Exibe os tamanhos das variáveis de tipos básicos
+    // `sizeof` retorna o tamanho (em bytes) de uma variável ou tipo
+    printf("Tamanhos %ld %ld %ld\n", sizeof(var1), sizeof(var2), sizeof(var3));
+
+    // Exibe os tamanhos dos ponteiros
+    // O tamanho de um ponteiro depende da arquitetura do sistema (geralmente 8 bytes em sistemas de 64 bits)
+    printf("Tamanhos %ld %ld %ld\n", sizeof(ponteiro1), sizeof(ponteiro2), sizeof(ponteiro3));
+
+    return 0; // Indica que o programa foi executado com sucesso
+}
