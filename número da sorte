@@ -1,0 +1,19 @@
+#include <stdio.h> // Biblioteca padrão para entrada e saída
+#include <locale.h> // Biblioteca para configurar a localidade
+
+int main() {
+    setlocale(LC_ALL, "Portuguese"); // Configura a localidade para português, permitindo acentuação e caracteres especiais
+
+    int i = 1; // Inicializa a variável `i` com o valor 1
+
+    // Início do laço `while`. Ele continuará executando enquanto o valor de `i` for diferente de 0
+    while (i) { // Observação: o laço não é infinito porque `i` pode ser alterado dentro do laço
+        printf("Digite o número da sorte\n"); // Solicita ao usuário que insira um número
+        scanf("%d", &i); // Lê o número inserido e armazena em `i`. Se `i` for 0, o laço será encerrado
+    }
+    
+    // Quando o laço é encerrado (ou seja, quando o usuário insere 0), exibe a mensagem final
+    printf("Parabéns você acertou!");
+    
+    return 0; // Indica que o programa foi executado com sucesso
+}
