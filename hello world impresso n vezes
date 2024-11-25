@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <locale.h>
+int printMsg(int n);
+
+int main(){
+	setlocale(LC_ALL, "Portuguese");
+	int codRetorno, n;
+	
+	printf("Início do Programa 3");
+	printf("\nEntre com um valor inteiro: ");
+	scanf("%d", &n);
+	codRetorno = printMsg(n);
+	printf("\nCodigo Retorno: %d", codRetorno);
+	printf("\nFim do Programa 3");
+	
+	return 0;
+}
+
+int printMsg(int n){
+	int i;
+	for(i=0; i<n; i++)
+		printf("\nHello World...");
+	
+	printf("\nTexto impresso %d vezes.", n);	
+	return 0;
+}
