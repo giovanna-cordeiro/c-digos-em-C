@@ -1,0 +1,34 @@
+#include <stdio.h>
+#define JOGADORES 4
+#define PARTIDAS 3
+void lerPontos(int pontos[JOGADORES][PARTIDAS]);
+int encontrarGanhador(int pontos[JOGADORES][PARTIDAS]);
+int main() {
+	int pontos[JOGADORES][PARTIDAS];
+	lerPontos(pontos);
+	int ganhador = encontrarGanhador(pontos);
+	printf("O jogador %d é o ganhador.\n", ganhador + 1);
+	return 0;
+}
+void lerPontos(int pontos[JOGADORES][PARTIDAS]) {
+	for (int i = 0; i < JOGADORES; i++) {
+		printf("Insira as pontuações do jogador %d:\n", i + 1);
+		for (int j = 0; j < PARTIDAS; j++) {
+			scanf("%d", &pontos[i][j]);
+		}
+	}
+}
+int encontrarGanhador(int pontos[JOGADORES][PARTIDAS]) {
+	int total[JOGADORES] = {0};
+	int maior = 0, ganhador = 0;
+	for (int i = 0; i < JOGADORES; i++) {
+		for (int j = 0; j < PARTIDAS; j++) {
+			total[i] += pontos[i][j];
+	}
+	if (total[i] > maior) {
+		maior = total[i];
+		ganhador = i;
+		}
+	}
+	return ganhador;
+}
