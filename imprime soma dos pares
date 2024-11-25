@@ -1,0 +1,36 @@
+#include <stdio.h> // Biblioteca padrão para funções de entrada e saída
+
+int main() {
+    int n1, n2, n3, n4, n5; // Declaração de cinco variáveis inteiras para armazenar os números
+    int soma = 0; // Inicializa a variável soma com 0, usada para armazenar a soma dos números pares
+
+    // Solicita ao usuário que digite 5 números
+    printf("Digite 5 números: ");
+    // Lê os 5 números fornecidos pelo usuário e os armazena nas variáveis n1, n2, n3, n4, n5
+    scanf("%d %d %d %d %d", &n1, &n2, &n3, &n4, &n5);
+
+    // Verifica se o primeiro número é par (resto da divisão por 2 é 0)
+    if (n1 % 2 == 0)
+        soma = soma + n1; // Adiciona n1 à variável soma se for par
+
+    // Verifica se o segundo número é par
+    if (n2 % 2 == 0)
+        soma = soma + n2; // Adiciona n2 à variável soma se for par
+
+    // Verifica se o terceiro número é par
+    if (n3 % 2 == 0)
+        soma = soma + n3; // Adiciona n3 à variável soma se for par
+
+    // Verifica se o quarto número é par
+    if (n4 % 2 == 0)
+        soma = soma + n4; // Adiciona n4 à variável soma se for par
+
+    // Verifica se o quinto número é par
+    if (n5 % 2 == 0)
+        soma = soma + n5; // Adiciona n5 à variável soma se for par
+
+    // Exibe o valor total da soma dos números pares
+    printf("Soma = %d", soma);
+
+    return 0; // Indica que o programa foi executado com sucesso
+}
