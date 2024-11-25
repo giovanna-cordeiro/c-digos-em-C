@@ -1,0 +1,30 @@
+#include <stdio.h> // Biblioteca padrão para entrada e saída
+
+// Declaração da função `quadrado`, que recebe um número do tipo `double` e retorna o quadrado desse número
+double quadrado(double x);
+
+// Declaração de uma variável global `c`, inicializada com o valor 20
+int c = 20;
+
+int main() {
+    double y = 5, x = 5; // Declaração e inicialização de duas variáveis do tipo `double` com o valor 5
+
+    // Chama a função `quadrado` com o valor de `x` e armazena o resultado em `y`
+    y = quadrado(x);
+
+    // Exibe os valores de `x`, `y` e da variável global `c` dentro da função `main`
+    printf("\nDentro do main X = %lf, Y = %lf, C = %d", x, y, c);
+    
+    return 0; // Indica que o programa foi executado com sucesso
+}
+
+// Implementação da função `quadrado`
+double quadrado(double x) {
+    c = 50; // Modifica o valor da variável global `c` para 50
+    int y = 10; // Declara uma variável local `y` do tipo `int` e inicializa com o valor 10
+
+    // Exibe os valores de `x`, `y` e da variável global `c` dentro da função
+    printf("\nDentro da funcao X = %lf, Y = %d, C = %d", x, y, c);
+
+    return x * x; // Retorna o quadrado do valor recebido
+}
