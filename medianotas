@@ -1,0 +1,28 @@
+#include <stdio.h> // Biblioteca necessária para funções de entrada e saída, como printf e scanf
+
+int main() {
+    int n1, n2; // Declaração de variáveis inteiras para armazenar as notas
+    float media; // Declaração de variável float para armazenar a média
+
+    // Solicita ao usuário que insira duas notas
+    printf("Digite duas notas: ");
+    // Lê as duas notas inseridas pelo usuário e as armazena em n1 e n2
+    scanf("%d %d", &n1, &n2);
+
+    // Calcula a média das duas notas, usando 2.0 para garantir que o cálculo seja em ponto flutuante
+    media = (n1 + n2) / 2.0;
+    // Exibe a média calculada com uma casa decimal
+    printf("Média = %.1f\n", media);
+
+    // Verifica se as duas notas são iguais
+    if (n1 == n2)
+        printf("Notas iguais\n"); // Exibe mensagem se as notas forem iguais
+    // Verifica se a primeira nota é maior que a segunda
+    else if (n1 > n2)
+        printf("N1 maior = %d", n1); // Exibe a maior nota (n1)
+    else
+        // Caso nenhuma das condições anteriores seja verdadeira, a segunda nota é maior
+        printf("N2 maior = %d", n2); // Exibe a maior nota (n2)
+        
+    return 0; // Retorna 0 para indicar que o programa terminou com sucesso
+}
